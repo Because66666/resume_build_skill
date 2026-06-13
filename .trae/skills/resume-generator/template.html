@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>姓名-来自（大学名称）-（岗位名称）</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.3;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 10px;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #1890ff;
+            padding-bottom: 6px;
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 26px;
+            font-weight: bold;
+            color: #1890ff;
+            margin-bottom: 8px;
+        }
+
+        .contact-info {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .contact-info p {
+            margin-bottom: 3px;
+        }
+
+        .photo-placeholder {
+            width: 100px;
+            height: 130px;
+            overflow: hidden;
+            border: 2px solid #d9d9d9;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1890ff;
+            margin-bottom: 4px;
+            padding-left: 10px;
+            border-left: 4px solid #1890ff;
+            line-height: 1.1;
+        }
+
+        .education-item {
+            margin-bottom: 6px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3px;
+        }
+
+        .school-name {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .education-time {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .education-detail {
+            color: #555;
+            font-size: 12px;
+        }
+
+        .awards-list {
+            list-style: none;
+        }
+
+        .awards-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .awards-list li:before {
+            content: "●";
+            color: #1890ff;
+            position: absolute;
+            left: 0;
+            font-size: 12px;
+            top: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+
+        .skill-item {
+            background-color: #f0f7ff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .skill-category {
+            font-weight: bold;
+            color: #1890ff;
+            margin-right: 8px;
+        }
+
+        .project-item {
+            margin-bottom: 6px;
+            padding: 6px;
+            background-color: #fafafa;
+            border-radius: 4px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3px;
+        }
+
+        .project-title {
+            font-size: 11px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .project-time {
+            color: #666;
+            font-size: 11px;
+        }
+
+        .project-desc {
+            color: #555;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .project-desc div {
+            margin-bottom: 4px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .project-desc div:before {
+            content: "•";
+            color: #1890ff;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .project-desc ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .project-desc li {
+            margin-bottom: 5px;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                padding: 20px;
+            }
+
+            .photo-placeholder {
+                border: 1px solid #333;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="photo-placeholder">
+            <img src="./default.png" alt="个人照片">
+        </div>
+
+        <div class="header">
+            <div class="header-info">
+                <div class="name">姓名</div>
+                <div class="contact-info">
+                    <p><strong>联系电话：</strong>（待填写）</p>
+                    <p><strong>电子邮箱：</strong>（待填写）</p>
+                    <p><strong>应聘岗位：</strong>（待填写）</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">教育背景</div>
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="school-name">学校名称 | 专业 | 学历</div>
+                    <div class="education-time">入学时间 - 毕业时间</div>
+                </div>
+                <div class="education-detail">
+                    <p>主修课程：（筛选几个相关的，然后忽略那些相关度不是很高的。筛选完成后，按照相关性从高往低排列，然后前3个用strong标签。）</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="section">
+            <div class="section-title">项目经历</div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">项目名称1</div>
+                    <div class="project-time">项目时间</div>
+                </div>
+                <div class="project-desc">
+                    <!-- 这些工作内容都只能用一段话来描述，不能用多个<p>标签 -->
+                    <p>主要工作内容1</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">项目名称2</div>
+                    <div class="project-time">项目时间</div>
+                </div>
+                <div class="project-desc">
+                    <p>主要工作内容1</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">项目名称3</div>
+                    <div class="project-time">项目时间</div>
+                </div>
+                <div class="project-desc">
+                    <p>主要工作内容1</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">校园经历</div>
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">职位名称1</div>
+                    <div class="project-time">时间</div>
+                </div>
+                <div class="project-desc">
+                    <p>工作内容描述</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">职位名称2</div>
+                    <div class="project-time">时间</div>
+                </div>
+                <div class="project-desc">
+                    <p>工作内容描述</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">荣誉奖项</div>
+            <div class="project-desc">
+                <!-- 用2行写，不要分点写太多。 -->
+                <div>奖项1、奖项2、奖项3</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">自我评价</div>
+            <div class="project-desc">
+                <!-- 用2行写，不要分点写太多。 -->
+                <div>个人优势1</div>
+                <div>个人优势2</div>
+            </div>
+        </div>        
+        <div class="section">
+            <div class="section-title">专业技能</div>
+            <div class="project-desc">
+                <!-- 用2行写，不要分点写太多。 -->
+                <div><strong>技能：</strong>（待填写）</div>
+                <div><strong>语言：</strong>（待填写）</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
